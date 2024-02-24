@@ -31,13 +31,12 @@ app.MapControllers();
 var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<StoreContext>();
 var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-// try{
-//     context.Database.Migrate();
-//     Dbinitializer.Initialize(context);
-
-// }
-// catch(Exception ex){
-//     logger.LogError(ex, "A problem occued during migration");
-// }
+try{
+    context.Database.Migrate();
+    Dbinitializer.Initialize(context); 
+}
+catch(Exception ex){
+    logger.LogError(ex, "A problem occued during migration");
+}
 
 app.Run();
