@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react"
-import { Product } from "../models/product";
-import Catalog from "../../features/catalog/Catalog";
+import { useEffect, useState } from "react"  
 import { Container, CssBaseline, ThemeProvider, createTheme } from "@mui/material";
-import Header from "./Header";
-
-
-function App() {
+import Header from "./Header"; 
+import { Outlet } from "react-router";
+import Catalog from "../../features/catalog/Catalog";
+ 
+export default function App() {
   const [darkMode, setDarkMode] = useState(false);
   const palleteType = darkMode ? 'dark' : 'light';
   const theme = createTheme({
@@ -24,12 +23,10 @@ function App() {
       <CssBaseline></CssBaseline>
       <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
       <Container>
-        <Catalog />
-      </Container>
-
+        <Outlet></Outlet>
+      </Container> 
     </ThemeProvider>
   )
 
 
-}
-export default App
+} 

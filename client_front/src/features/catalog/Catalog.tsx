@@ -1,15 +1,14 @@
 import { Fragment, useEffect, useState } from "react"
 
 import { Product } from "../../app/models/product";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import ProductList from "./ProductList";
 
 interface Props {
 
 }
-
 export default function Catalog(props: Props) {
-    const [products, setProducts3] = useState<Product[]>([]);
+  const [products, setProducts3] = useState<Product[]>([]);
 
   useEffect(() => {
     fetch('http://localhost:5074/api/products')
@@ -32,10 +31,11 @@ export default function Catalog(props: Props) {
     }])
   }
 
-    return (
-        <Fragment>
-            <ProductList products={products} />
-            <Button variant="contained" onClick={addProducts}>Add Product</Button>
-        </Fragment>
-    )
+  return (
+  
+    <Fragment>
+      <ProductList products={products} />
+      <Button variant="contained" onClick={addProducts}>Add Product</Button>
+    </Fragment>
+  )
 }
