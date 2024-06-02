@@ -1,41 +1,28 @@
-import { Fragment, useEffect, useState } from "react"
+import { Fragment, useEffect } from "react"
+ 
+import ProductList from "./ProductList"; 
+import LoadingComponent from "../../app/layout/LoadingComponent";
+import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
+import { fetchProductsAsync, productSelectors } from "./catalogSlice";
 
-import { Product } from "../../app/models/product";
-import { Button, Typography } from "@mui/material";
-import ProductList from "./ProductList";
 
-interface Props {
-
-}
-export default function Catalog(props: Props) {
-  const [products, setProducts3] = useState<Product[]>([]);
+export default function Catalog() { 
+  const products = useAppSelector(productSelectors.selectAll);
+  const dispatch = useAppDispatch(); 
+  const {productsLoaded, status} = useAppSelector(state => state.catalog);
 
   useEffect(() => {
-    fetch('http://localhost:5074/api/products')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        return setProducts3(data)
-      })
-  }, [])
+    if(!productsLoaded)dispatch(fetchProductsAsync());
+  }, [productsLoaded])
 
-  function addProducts() {
-    setProducts3(prevProduct => [...prevProduct,
-    {
-      id: 10,
-      name: '005 ' + prevProduct.length,
-      price: prevProduct.length,
-      brand: 'test',
-      description: 'test',
-      pictureUrl: ''
-    }])
-  }
+  
 
+  if(status.includes('pending')) return <LoadingComponent message="Loading products"></LoadingComponent>
   return (
   
     <Fragment>
       <ProductList products={products} />
-      <Button variant="contained" onClick={addProducts}>Add Product</Button>
+      
     </Fragment>
   )
 }

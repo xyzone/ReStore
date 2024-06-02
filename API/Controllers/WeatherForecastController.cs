@@ -4,7 +4,7 @@ namespace API.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecast1Controller : ControllerBase
+public class WeatherForecast1Controller : BaseApiController
 {
     private static readonly string[] Summaries = new[]
     {

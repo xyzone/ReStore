@@ -2948,11 +2948,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/richard/Desktop/Training/dotnet/ReStore/API/API.csproj",
+      "projectUniqueName": "/private/var/www/dotnet/ReStore/API/API.csproj",
       "projectName": "API",
-      "projectPath": "/Users/richard/Desktop/Training/dotnet/ReStore/API/API.csproj",
+      "projectPath": "/private/var/www/dotnet/ReStore/API/API.csproj",
       "packagesPath": "/Users/richard/.nuget/packages/",
-      "outputPath": "/Users/richard/Desktop/Training/dotnet/ReStore/API/obj/",
+      "outputPath": "/private/var/www/dotnet/ReStore/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/richard/.nuget/NuGet/NuGet.Config"
@@ -3018,7 +3018,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

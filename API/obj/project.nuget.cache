@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CqOzQLOdVATuF1sRMmdksUyb33RterYoJcZSEc59jBvCSR++VKD0ENfDfo6dsYZ8qzZ8XmoE9yjlTdrCKc9Uzg==",
+  "dgSpecHash": "PfcLCS+I6u4=",
   "success": true,
-  "projectFilePath": "/Users/richard/Desktop/Training/dotnet/ReStore/API/API.csproj",
+  "projectFilePath": "/private/var/www/dotnet/ReStore/API/API.csproj",
   "expectedPackageFiles": [
     "/Users/richard/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/richard/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
