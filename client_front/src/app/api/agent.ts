@@ -65,6 +65,7 @@ const TestErrors = {
 const Catalog = {
   list: () => requests.get("products"),
   details: (id: number) => requests.get(`products/${id}`),
+  fetchFilter: () => requests.get('products/filters')
 };
 
 const Basket = {
